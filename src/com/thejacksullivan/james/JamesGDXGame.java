@@ -311,21 +311,21 @@ public class JamesGDXGame implements Screen{
 	}
 	
 	private void getDeathTiles(int startX, int startY, int endX, int endY, Array<Rectangle> deathTiles){
-        TiledMapTileLayer layer2 = (TiledMapTileLayer) map.getLayers().get("DeathLayer");
-        deathPool.freeAll(deathTiles);
-        deathTiles.clear();
-        
-        for(int y = startY; y <= endY; y++) {
-            for(int x = startX; x <= endX; x++) {
-                    Cell cell = layer2.getCell(x, y);
-                    if(cell != null) {
-                        Rectangle rect2 = deathPool.obtain();
-                        rect2.set(x, y, 1, 1);
-                        deathTiles.add(rect2);
-                     
-                    }
-            }
-        } 
+	        TiledMapTileLayer layer2 = (TiledMapTileLayer) map.getLayers().get("DeathLayer");
+	        deathPool.freeAll(deathTiles);
+	        deathTiles.clear();
+	        
+	        for(int y = startY; y <= endY; y++) {
+	            for(int x = startX; x <= endX; x++) {
+	                    Cell cell = layer2.getCell(x, y);
+	                    if(cell != null) {
+	                        Rectangle rect2 = deathPool.obtain();
+	                        rect2.set(x, y, 1, 1);
+	                        deathTiles.add(rect2);
+	                     
+	                    }
+	            }
+	        } 
 	}
 	
 	private void getDoorTiles(int startX, int startY, int endX, int endY, Array<Rectangle> doorTiles){
